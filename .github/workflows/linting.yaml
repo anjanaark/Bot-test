@@ -5,13 +5,6 @@ on:
     types:
       - opened
       - synchronize
-    branches: ["main"]
-  push:
-    types:
-      - opened
-      - synchronize
-    branches: ["main"]
-
 
 jobs:
   linting_and_commenting:
