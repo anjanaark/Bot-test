@@ -26,4 +26,12 @@ jobs:
 
     - name: Run flake8
       run: |
-        flake8 --tee --output-file=output.txt .
+        flake8 --tee --output-file=lint_output.txt .
+
+    - name: Post linting comments
+      run: |
+        python comment_on_pr.py
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PR_NUMBER: ${{ github.event.pull_request.number }}
+        GITHUB_REPOSITORY: ${{ github.repository }}
