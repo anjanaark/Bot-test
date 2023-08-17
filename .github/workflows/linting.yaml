@@ -26,5 +26,5 @@ jobs:
 
     - name: Run flake8
       run: |
-        flake8 --output-file lint_output.txt
+        flake8 --format=pylint --output-file=lint_output.txt ./
         cat lint_output.txt
